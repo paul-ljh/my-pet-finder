@@ -8,13 +8,10 @@ const petfinder = pf({
 });
 
 class Results extends React.Component {
-  constructor(props) {
-    super(props);
+  state = {
+    pets: []
+  };
 
-    this.state = {
-      pets: []
-    };
-  }
   componentDidMount() {
     petfinder.pet
       .find({ location: "Seattle, WA", output: "full" })
