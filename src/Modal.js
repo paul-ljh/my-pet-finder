@@ -5,9 +5,9 @@ const modalRoot = document.getElementById('modal')
 
 class Modal extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.el = document.createElement("div")
+    this.el = document.createElement('div')
   }
 
   componentDidMount() {
@@ -23,4 +23,4 @@ class Modal extends React.Component {
   }
 }
 
-export default Modal;
+export default Modal

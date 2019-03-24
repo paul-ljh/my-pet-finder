@@ -1,19 +1,19 @@
 import React from 'react'
 import SearchBox from './SearchBox'
-import { navigate } from '@reach/router';
+import { navigate } from '@reach/router'
 
 class SearchParams extends React.Component {
   handleSearchSubmit() {
-    navigate("/");
+    navigate('/')
   }
 
-  render () {
+  render() {
     return (
-      <div className="search-route">
-        <SearchBox search={this.handleSearchSubmit}/>
+      <div className='search-route'>
+        <SearchBox search={this.handleSearchSubmit} />
       </div>
     )
   }
 }
 
-export default SearchParams;
+export default SearchParams

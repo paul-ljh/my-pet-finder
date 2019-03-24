@@ -1,15 +1,14 @@
 import React from 'react'
 
 const SearchContext = React.createContext({
-  location: "Seattle. WA",
-  animal: "",
-  breed: "",
+  location: 'Seattle. WA',
+  animal: '',
+  breed: '',
   breeds: [],
   handleAnimalChange() {},
   handleBreedChange() {},
   handleLocationChange() {},
-  getBreeds() {}
+  getBreeds() {},
 })
 
-export const Provider = SearchContext.Provider
-export const Consumer = SearchContext.Consumer
+export default SearchContext

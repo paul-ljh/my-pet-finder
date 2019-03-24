@@ -1,38 +1,38 @@
-import React from "react";
+import React from 'react'
 
 class Carousel extends React.Component {
   state = {
     photos: [],
-    active: 0
+    active: 0,
   }
 
   static getDerivedStateFromProps({ media }) {
-    let photos = [];
+    let photos = []
     if (media && media.photos && media.photos.photo) {
-      photos = media.photos.photo.filter(photo => photo["@size"] === "pn");
+      photos = media.photos.photo.filter((photo) => photo['@size'] === 'pn')
     }
 
-    return { photos };
+    return { photos }
   }
 
-  handleIndexClick = event => {
+  handleIndexClick = (event) => {
     this.setState({
-      active: +event.target.dataset.index
-    });
-  };
+      active: +event.target.dataset.index,
+    })
+  }
 
   render() {
-    const { photos, active } = this.state;
+    const { photos, active } = this.state
 
-    let hero = "http://placecorgi.com/300/300";
+    let hero = 'http://placecorgi.com/300/300'
     if (photos[active] && photos[active].value) {
-      hero = photos[active].value;
+      hero = photos[active].value
     }
 
     return (
-      <div className="carousel">
-        <img src={hero} alt="animal" />
-        <div className="carousel-smaller">
+      <div className='carousel'>
+        <img src={hero} alt='animal' />
+        <div className='carousel-smaller'>
           {photos.map((photo, index) => (
             /* eslint-disable-next-line */
             <img
@@ -40,15 +40,14 @@ class Carousel extends React.Component {
               data-index={index}
               key={photo.value}
               src={photo.value}
-              className={index === active ? "active" : ""}
-              alt="animal thumnbail"
+              className={index === active ? 'active' : ''}
+              alt='animal thumnbail'
             />
           ))}
         </div>
       </div>
-    );
+    )
   }
-
 }
 
-export default Carousel;
+export default Carousel
